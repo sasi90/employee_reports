@@ -3,7 +3,7 @@ from flask import Flask, send_file, send_from_directory
 from flask import jsonify, make_response, request, session
 from flask_httpauth import HTTPBasicAuth
 from logger import trace, exc
-from api_app.views import EMPLOYEE as emp
+from project_app.views import EMPLOYEE as emp
 from pydantic import BaseModel
 
 from flask_openapi3 import Info, Tag
