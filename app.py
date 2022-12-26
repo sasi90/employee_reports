@@ -4,8 +4,17 @@ from flask import jsonify, make_response, request, session
 from flask_httpauth import HTTPBasicAuth
 from logger import trace, exc
 from api_app.views import EMPLOYEE as emp
+from pydantic import BaseModel
 
-app = Flask(__name__)
+from flask_openapi3 import Info, Tag
+from flask_openapi3 import OpenAPI
+
+info = Info(title="book API", version="1.0.0")
+app = OpenAPI(__name__, info=info)
+
+book_tag = Tag(name="book", description="Some Book")
+
+# app = Flask(__name__)
 auth = HTTPBasicAuth()
 app.secret_key = 'tIZs2IzxoCTCd0_SkJK4fz7gRNQ'.encode('utf-8')
 
