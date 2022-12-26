@@ -1,22 +1,13 @@
 import logging
 from logging.handlers import TimedRotatingFileHandler
-# from logging.handlers import RotatingFileHandler
+from logging.handlers import RotatingFileHandler
 import os
+
+ROOT = os.getcwd()
 
 formatter = logging.Formatter('%(levelname)s | %(asctime)s | module: %(module)s | lineno: %(lineno)d | %(message)s')
 
 
-# def setup_logger(name, log_file, level=logging.INFO):
-#     """To setup as many loggers as you want"""
-#
-#     handler = logging.FileHandler(log_file)
-#     handler.setFormatter(formatter)
-#
-#     logger = logging.getLogger(name)
-#     logger.setLevel(level)
-#     logger.addHandler(handler)
-#
-#     return logger
 def setup_logger(name, log_file, level=logging.INFO):
     """To setup as many loggers as you want"""
     logger = logging.getLogger(name)
@@ -26,8 +17,19 @@ def setup_logger(name, log_file, level=logging.INFO):
     logger.addHandler(fh)
     return logger
 
-Trace_file_path = 'logs/traces.log'
-Exe_file_path = 'logs/exceptions.log'
+
+log_path = os.path.join(ROOT + '/logs')
+
+if not os.path.exists(log_path):
+    os.mkdir(log_path)
+
+download_path = os.path.join(ROOT + '/docx_download')
+
+if not os.path.exists(download_path):
+    os.mkdir(download_path)
+
+Trace_file_path = os.path.join(ROOT + '/logs/traces.log')
+Exe_file_path = os.path.join(ROOT + '/logs/exceptions.log')
 
 if not os.path.exists(Trace_file_path):
     open(Trace_file_path, 'w+')
