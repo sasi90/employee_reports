@@ -72,13 +72,13 @@ class EMPLOYEE:
             leave = {}
             per_mission = {}
             for dat in data:
-                Flag = True
+                Flag = False
                 if dat['sign_in_time'] == '0:00:00' or dat['sign_out_time'] == '0:00:00':
-                    Flag = False
+                    Flag = True
                 elif str(dat['sign_in_time']).lower() == 'none' or str(dat['sign_out_time']).lower() == 'none':
-                    Flag = False
+                    Flag = True
                 elif str(dat['sign_in_time']).lower() == 'null' or str(dat['sign_out_time']).lower() == 'null':
-                    Flag = False
+                    Flag = True
                 else:
                     pass
                 if Flag:
@@ -138,7 +138,7 @@ class EMPLOYEE:
                             dat['sign_in_time'],
                             '%H:%M:%S')
                         dur = [int(x) for x in str(del_ta).split(':')]
-                        if dur[0] <= 9:
+                        if dur[0] < 9:
                             if dat['emp_id'] in res_dic:
                                 res_dic[dat['emp_id']]['less_work'] += 1
                             else:
@@ -224,7 +224,7 @@ class EMPLOYEE:
                             dic["sign_out_time"] = str(dat[4])
                             dic["permission_days"] = str(dat[5])
                             resp.append(deepcopy(dic))
-                        return [resp, 200]
+                        return [sorted(resp, key=lambda k:k['login_date']), 200]
                     else:
                         return ['No data found', 200]
                 else:

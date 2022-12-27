@@ -21,7 +21,6 @@ class DataAccess:
                         database='emp_report',
                         user='root',
                         password='root@123')
-            print('data connection success')
             return av3arDB_CNX
         except Exception as e:
             # logging.error("Error while opening the DB connection")
