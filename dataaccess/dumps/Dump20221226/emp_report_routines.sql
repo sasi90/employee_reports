@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `emp_report` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `emp_report`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: emp_report
@@ -33,10 +35,10 @@
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `emp_attend_insert`(IN L_DATE DATE, 
-IN EMPY_ID VARCHAR(45), IN IN_TIME TIME, IN OUT_TIME TIME)
+IN EMPY_ID VARCHAR(45), IN IN_TIME TIME, IN OUT_TIME TIME, IN PER_MIS TINYINT)
 BEGIN
-INSERT INTO emp_attendance_details(login_date, emp_id, in_time, out_time) 
-VALUES (L_DATE, EMPY_ID, IN_TIME, OUT_TIME);
+INSERT INTO emp_attendance_details(login_date, emp_id, in_time, out_time,permission_days) 
+VALUES (L_DATE, EMPY_ID, IN_TIME, OUT_TIME, PER_MIS);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -209,4 +211,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-26 21:37:14
+-- Dump completed on 2022-12-27 14:47:44

@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `emp_report` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `emp_report`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: emp_report
@@ -36,7 +38,7 @@ CREATE TABLE `hr_login` (
 
 LOCK TABLES `hr_login` WRITE;
 /*!40000 ALTER TABLE `hr_login` DISABLE KEYS */;
-INSERT INTO `hr_login` VALUES (1,'hr@gmail.com','hr@123'),(3,'hr@gmail','123'),(4,'test@gmail.com','test@123');
+INSERT INTO `hr_login` VALUES (1,'hr@gmail.com','hr@123'),(4,'test@gmail.com','test@123');
 /*!40000 ALTER TABLE `hr_login` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-26 21:37:13
+-- Dump completed on 2022-12-27 14:47:43

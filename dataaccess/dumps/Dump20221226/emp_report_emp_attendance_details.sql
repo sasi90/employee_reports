@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `emp_report` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `emp_report`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: emp_report
@@ -30,7 +32,7 @@ CREATE TABLE `emp_attendance_details` (
   `out_time` time DEFAULT NULL,
   `permission_days` tinyint DEFAULT NULL,
   PRIMARY KEY (`s.no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +41,7 @@ CREATE TABLE `emp_attendance_details` (
 
 LOCK TABLES `emp_attendance_details` WRITE;
 /*!40000 ALTER TABLE `emp_attendance_details` DISABLE KEYS */;
-INSERT INTO `emp_attendance_details` VALUES (1,'2022-12-23','1001','09:30:00','18:00:00',0),(2,'2022-10-05','1001',NULL,NULL,1),(3,'2022-05-05','1002',NULL,'27:00:00',1),(4,'2022-05-05','1003','10:00:00','17:00:09',0),(5,'2022-05-05','1001','11:00:08','15:00:09',0);
+INSERT INTO `emp_attendance_details` VALUES (1,'2022-12-23','1001','09:30:00','18:00:00',0),(2,'2022-10-05','1001',NULL,NULL,1),(3,'2022-05-05','1002',NULL,'27:00:00',1),(4,'2022-05-05','1003','10:00:00','17:00:09',0),(5,'2022-05-05','1001','11:00:08','15:00:09',0),(6,'2022-10-01','1001','09:30:00','18:30:00',0),(7,'2022-10-02','1001','09:30:00','19:00:00',0),(8,'2022-10-03','1001','09:10:00','16:00:00',0),(9,'2022-10-04','1001',NULL,NULL,1),(10,'2022-10-05','1001','09:30:00',NULL,0),(11,'2022-10-06','1001',NULL,'20:00:00',0),(12,'2022-10-07','1001','10:10:00','18:00:30',0),(13,'2022-10-08','1001','10:10:10',NULL,0),(14,'2022-10-09','1001','09:30:00','19:00:00',0),(15,'2022-10-10','1001','09:10:00','19:30:00',0),(36,'2022-11-01','1001','09:10:00','18:30:00',0),(37,'2022-11-02','1001','09:30:00','20:00:00',0),(38,'2022-11-03','1001','10:10:00','16:00:00',0),(39,'2022-11-04','1001',NULL,NULL,0),(40,'2022-11-05','1001',NULL,NULL,1),(41,'2022-11-06','1001','10:10:00','18:00:30',0),(42,'2022-11-07','1001','09:30:00','19:30:00',0),(43,'2022-11-08','1001','09:10:00','18:30:00',0),(44,'2022-10-01','1002','09:00:00','18:35:00',0),(45,'2022-10-02','1002','10:30:00','20:00:00',0),(46,'2022-10-03','1002','10:10:00','16:00:00',0),(47,'2022-10-03','1002','09:10:00','18:30:00',0);
 /*!40000 ALTER TABLE `emp_attendance_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-26 21:37:13
+-- Dump completed on 2022-12-27 14:47:44
